@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
       keepAlive: true,
       requireAuth: false
     },
-    component: () => import('@/pages/login/index.vue')
+    component: () => import('@/pages/home/index.vue')
   },
   {
     path: '/',
@@ -17,8 +17,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/common/layouts/index.vue'),
     children: [
       {
-        path: '/',
-        name: 'Index',
+        path: '/2',
+        name: 'Index2',
         meta: {
           title: '首页',
           keepAlive: true,

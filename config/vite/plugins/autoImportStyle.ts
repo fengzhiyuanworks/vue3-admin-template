@@ -1,6 +1,7 @@
 /**
- *  按需导入组件库样式
- * https://github.com/vbenjs/vite-plugin-style-import/blob/main/README.zh_CN.md
+ * @name autoImportStylePlugin
+ * @description 按需导入组件库样式
+ * @url https://github.com/vbenjs/vite-plugin-style-import/blob/main/README.zh_CN.md
  */
 import {
   createStyleImportPlugin,
@@ -11,7 +12,7 @@ import {
   // AntdResolve,
 } from 'vite-plugin-style-import'
 
-export function configStyleImportPlugin() {
+export function autoImportStylePlugin() {
   // if (!isBuild) return [];
   const pwaPlugin = createStyleImportPlugin({
     resolves: [

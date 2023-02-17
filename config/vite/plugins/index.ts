@@ -1,16 +1,19 @@
+/* 独立管理 vite plugin */
+
 import type { Plugin } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
-// import { configStyleImportPlugin } from './styleImport';
-// import { configSvgIconsPlugin } from './svgIcons';
-// import { autoRegistryComponents } from './component';
-// import { AutoImportDeps } from './autoImport';
-// import { configMockPlugin } from './mock';
-// import { configVisualizerConfig } from './visualizer';
-// import { configCompressPlugin } from './compress';
 
+// plugin modules
+import { configVisualizerConfig } from './visualizer';
+import { configCompressPlugin } from './compress';
 import { autoRegistryComponents } from './autoImportComponents';
+import { autoImportStylePlugin } from './autoImportStyle';
+import { AutoImportDeps } from './autoImportDeps';
+import { imageminPlugin } from './imagemin'
+
+import { LEGACY } from '../../constant'
 
 export function createVitePlugins(isBuild: boolean) {
   const vitePlugins: (Plugin | Plugin[])[] = [
@@ -20,27 +23,24 @@ export function createVitePlugins(isBuild: boolean) {
     vueJsx(),
     // unplugin-vue-components/vite 自动按需引入组件
     autoRegistryComponents(),
-    // 自动按需引入依赖
-    // AutoImportDeps(),
+    // 自动按需引入依赖 , 目前针对 vue / vue-router
+    AutoImportDeps(),
   ];
 
-  // @vitejs/plugin-legacy
-  isBuild && vitePlugins.push(legacy({ targets: ['Chrome 64'], modernPolyfills: true }));
+  // @vitejs/plugin-legacy 浏览器兼容
+  isBuild && LEGACY && vitePlugins.push(legacy({ targets: ['Chrome 64'], modernPolyfills: true }));
 
-  // rollup-plugin-gzip
-  // isBuild && vitePlugins.push(configCompressPlugin());
+  // rollup-plugin-gzip gzip压缩
+  isBuild && vitePlugins.push(configCompressPlugin());
 
-  // vite-plugin-svg-icons
-  // vitePlugins.push(configSvgIconsPlugin(isBuild));
-
-  // vite-plugin-mock
-  // vitePlugins.push(configMockPlugin(isBuild));
-
-  // rollup-plugin-visualizer
-  // vitePlugins.push(configVisualizerConfig());
+  // rollup-plugin-visualizer 构建分析
+  isBuild && vitePlugins.push(configVisualizerConfig());
 
   // vite-plugin-style-import
-  // vitePlugins.push(configStyleImportPlugin(isBuild));
+  // isBuild && vitePlugins.push(autoImportStylePlugin());
+
+  // vite-plugin-imagemin 图片压缩
+  // isBuild && vitePlugins.push(imageminPlugin())
 
   return vitePlugins;
 }

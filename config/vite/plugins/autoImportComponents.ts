@@ -12,7 +12,7 @@ export const autoRegistryComponents = () => {
     dts: './src/types/autoComponent.d.ts', // 生成 自定引入组件的ts 文件查看导入信息
     resolvers: [
       AntDesignVueResolver({
-        importStyle: true, // 指是否需要自动随引入加载对应的组件样式 某些二级组件（比如 DateRangePicker）没办法准确地识别正确路径，他的搜寻路径都是按一级组件来写的
+        importStyle: false, // 指是否需要自动随引入加载对应的组件样式 某些二级组件（比如 DateRangePicker）没办法准确地识别正确路径，他的搜寻路径都是按一级组件来写的
         resolveIcons: true // 自动引入图标
       })]
   })

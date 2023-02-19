@@ -1,0 +1,22 @@
+const routes = [
+  {
+    path: "/{{name}}",
+    name: "{{name}}",
+    redirect: "/{{name}}/index",
+    meta: {
+      title: "{{cname}}"
+    },
+    children: [
+      {
+        path: "/{{name}}/index",
+        name: "/{{name}}Index",
+        component: () => import(/* webpackChunkName: "{{name}}" */ "./{{name}}/index.vue"),
+        meta: {
+          title: ""
+        }
+      },
+    ]
+  }
+];
+
+export default routes;

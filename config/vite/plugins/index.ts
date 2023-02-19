@@ -4,6 +4,7 @@ import type { Plugin } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
+import eslint from 'vite-plugin-eslint'
 
 // plugin modules
 import { configVisualizerConfig } from './visualizer';
@@ -13,6 +14,8 @@ import { autoImportStylePlugin } from './autoImportStyle';
 import { AutoImportDeps } from './autoImportDeps';
 import { imageminPlugin } from './imagemin'
 
+
+
 import { LEGACY } from '../../constant'
 
 export function createVitePlugins(isBuild: boolean) {
@@ -21,6 +24,8 @@ export function createVitePlugins(isBuild: boolean) {
     vue(),
     // JSX支持
     vueJsx(),
+    // eslint
+    eslint(),
     // unplugin-vue-components/vite 自动按需引入组件
     autoRegistryComponents(),
     // 自动按需引入依赖 , 目前针对 vue / vue-router

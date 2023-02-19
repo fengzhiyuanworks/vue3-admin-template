@@ -1,16 +1,11 @@
-import axios from 'axios'
-import Vue from 'vue'
-import qs from 'querystring'
-import router from '@/router'
-import store from '@/store'
-import {
-  SUCCESS,
-  REQUEST_FAIL,
-  URL_NULL,
-  NO_AUTH
-} from '@/common/constant/retCode'
-import { BASE_URL, PORTAL_URL } from '@/common/constant/basePath'
-import { delCookie } from '@/common/utils/util'
+import axios from "axios";
+import Vue from "vue";
+import qs from "querystring";
+import router from "@/router";
+import store from "@/store";
+import { SUCCESS, REQUEST_FAIL, URL_NULL, NO_AUTH } from "@/common/constant/retCode";
+import { BASE_URL, PORTAL_URL } from "@/common/constant/basePath";
+import { delCookie } from "@/common/utils/util";
 
 /** * @param timeout 请求超时时限
  * * @param baseURL 请求根地址

@@ -1,38 +1,42 @@
-import { createRouter, createWebHashHistory,  /* createWebHistory, */ RouteRecordRaw } from 'vue-router';
+import {
+  createRouter,
+  createWebHashHistory,
+  /* createWebHistory, */ RouteRecordRaw
+} from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/login',
-    name: 'Login',
+    path: "/login",
+    name: "Login",
     meta: {
-      title: '登录',
+      title: "登录",
       keepAlive: true,
       requireAuth: false
     },
-    component: () => import('@/pages/home/index.vue')
+    component: () => import("@/pages/home/index.vue")
   },
   {
-    path: '/',
-    name: 'basicLayout',
-    component: () => import('@/common/layouts/index.vue'),
+    path: "/",
+    name: "basicLayout",
+    component: () => import("@/common/layouts/index.vue"),
     children: [
       {
-        path: '/2',
-        name: 'Index2',
+        path: "/2",
+        name: "Index2",
         meta: {
-          title: '首页',
+          title: "首页",
           keepAlive: true,
           requireAuth: true
         },
-        component: () => import('@/pages/home/index.vue'),
+        component: () => import("@/pages/home/index.vue")
       }
     ]
-  },
-]
+  }
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-  scrollBehavior: () => ({ left: 0, top: 0 }),
+  scrollBehavior: () => ({ left: 0, top: 0 })
 });
 export default router;

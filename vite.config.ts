@@ -36,6 +36,7 @@ export default defineConfig({
     drop: ["console", "debugger"] // 推荐esbuild，速度比terser快
   },
   build: {
+    // assetsInlineLimit:1024*4, // vite默认将小于4k资源转base64
     target: 'es2015',
     minify: 'terser',
     terserOptions: {

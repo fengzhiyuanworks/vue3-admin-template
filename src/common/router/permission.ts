@@ -3,12 +3,12 @@
  * @description 全局路由过滤、权限过滤
  */
 
-import router from '.';
+import router from ".";
 // import { getToken } from '../utils/auth';
 // import { usePermissioStoreWithOut } from '/@/store/modules/permission';
 
 // const permissioStore = usePermissioStoreWithOut();
-const whiteList = ['/login']; // no redirect whitelist
+const whiteList = ["/login"]; // no redirect whitelist
 
 // router.beforeEach(async (to: any, _:any, next:any) => {
 //   const hasToken = getToken();

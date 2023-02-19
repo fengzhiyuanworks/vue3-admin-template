@@ -1,6 +1,6 @@
 <template>
-   <a-button type="primary">Primary Button</a-button>
-   <a-range-picker v-model:value="value1" />
+  <a-button type="primary">Primary Button</a-button>
+  <a-range-picker v-model:value="value1" />
   <!-- <a-menu
     id="dddddd"
     v-model:openKeys="openKeys"
@@ -54,21 +54,19 @@
 
 <script setup lang="ts">
 // import { MailOutlined, QqOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
-import { ref, watch } from 'vue'
-const value1 = ref([])
-const selectedKeys = ref(['1'])
-const openKeys = ref(['sub1'])
-const handleClick = (e:any) => {
-  console.log('click', e);
-};
-const titleClick = (e:any) => {
-  console.log('titleClick', e);
-};
-watch(() => openKeys, val => {
-  console.log('openKeys', val);
-});
+import { ref } from "vue";
+const value1 = ref([]);
+// const selectedKeys = ref(['1'])
+// const openKeys = ref(['sub1'])
+// const handleClick = (e:any) => {
+//   console.log('click', e);
+// };
+// const titleClick = (e:any) => {
+//   console.log('titleClick', e);
+// };
+// watch(() => openKeys, val => {
+//   console.log('openKeys', val);
+// });
 </script>
 
-<style>
-
-</style>
+<style></style>

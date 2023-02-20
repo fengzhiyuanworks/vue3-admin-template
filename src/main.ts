@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import "@common/style/index.less";
+import "@/common/style/index.less";
 import App from "./App.vue";
 import store from "@/common/store";
 import router from "@/common/router";

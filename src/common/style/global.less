@@ -1,0 +1,38 @@
+/* TOBE： 应用全局样式 */
+
+html,
+body {
+  font-family: "PingFang SC", "Microsoft YaHei";
+  background-color: #fff;
+  height: 100%;
+  font-size: 12px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #d2d2d2;
+}
+
+.clearfix {
+  zoom: 1;
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}

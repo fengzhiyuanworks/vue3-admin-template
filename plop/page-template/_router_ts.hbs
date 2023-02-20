@@ -1,0 +1,23 @@
+import { RouteRecordRaw } from "vue-router";
+const routes: RouteRecordRaw[] = [
+  {
+    path: "/{{name}}",
+    name: "{{name}}",
+    // redirect: "/",
+    meta: {
+      title: ""
+    },
+    children: [
+      {
+        path: "/{{name}}",
+        name: "/{{name}}Index",
+        component: () => import(/* webpackChunkName: "{{name}}" */ "@/pages/{{name}}/index.vue"),
+        meta: {
+          title: ""
+        }
+      }
+    ]
+  }
+];
+
+export default routes;

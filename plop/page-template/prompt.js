@@ -21,14 +21,14 @@ export default {
     const dataName = data.name
     const actions = [{
         type: 'add',
-        path: `${process.cwd()}/src/pages/${dataName}/api.js`, // 这里的name就是上面定义的键
-        templateFile: './page-template/_api_js.hbs',
+        path: `${process.cwd()}/src/pages/${dataName}/api.ts`, // 这里的name就是上面定义的键
+        templateFile: './page-template/_api_ts.hbs',
         data
       },
       {
         type: 'add',
-        path: `${process.cwd()}/src/pages/${dataName}/router.js`, // 这里的name就是上面定义的键
-        templateFile: './page-template/_router_js.hbs',
+        path: `${process.cwd()}/src/pages/${dataName}/router.ts`, // 这里的name就是上面定义的键
+        templateFile: './page-template/_router_ts.hbs',
         data
       },
       {
